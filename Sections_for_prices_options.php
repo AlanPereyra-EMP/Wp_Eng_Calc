@@ -19,38 +19,37 @@ function sfpo_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'sfpo_scripts');
 
-// add hello world message
+/**
+ * Shortcode function
+ */
 
-function hello_world() {
-	echo '<br><div class="hello-world notice notice-success is-dismissible">Hello World</div>';
-}
+if(!shortcode_exists('sfpo')) {
+    function sfpo_shortcode($atts ) {
 
-add_action('admin_notices', 'hello_world');
+    	// atts
+    	extract( shortcode_atts( array(
+	      'eco' => 'Eco',
+	      'regular' => 'Regular',
+	      'pro' => 'Pro',
+	      'description' => 'Description',
+	      ), $atts ) );
 
-function hello_css(){
-	echo '
-	<style>
-	.hello-world{
-		padding:10px;
-	}
-	</style>';
-}
+        // Head
+    	$thead = '<thead>'.'<th></th><th>'.esc_attr($eco).'</th><th>'.esc_attr($regular).'</th><th>'.esc_attr($pro).'</th></thead>';
 
-add_action( 'admin_head', 'hello_css' );
+    	// Body
 
+    	$description = '<th>'.esc_attr($description).'</th>';
+    	$td_1 = '<td>❌</td>';
+    	$td_2 = '<td>❌</td>';
+    	$td_3 = '<td>✔️</td>';
 
-// display this message one time
+    	$tbody = '<tbody>'.$description.$td_1.$td_2.$td_3.'</tbody>';
 
-function sample_admin_notice__error() {
-	$class = 'notice notice-error is-dismissible';
-	$message = __( 'Irks! An error has occurred.', 'sample-text-domain' );
-
-	printf( '<div class="%1$s"><p>%2$s</p></div>', esc_attr( $class ), esc_html( $message ) );
-}
-
-if (!$sample_message_was_view){
-	add_action( 'admin_notices', 'sample_admin_notice__error' );
-	$sample_message_was_view;
+        // always return
+        return '<div class="overflow-x-auto"><table class="sfpo-table">'. $thead.$tbody. '</table></div>';
+    }
+    add_shortcode('sfpo', 'sfpo_shortcode');
 }
 
 ?>

@@ -1,3 +1,37 @@
-body{
-	display: block!important;
+.sfpo-table {
+  width: 100%;
+  border: none;
+}
+.sfpo-table thead th{
+  padding: 1rem;
+  border-radius: 10px 10px 0 0;
+  border: none!important;
+}
+.sfpo-table thead th, .sfpo-table tbody th{
+  background: #ddd!important;
+  filter: brightness(1);
+  color:#262626;
+}
+.sfpo-table th, td{
+  text-align: center;
+  border: none;
+  padding: 10px 0;
+}
+.overflow-x-auto{
+  overflow-x: auto;
+
+td:first-child, th:first-child {
+ border-left: none;
+}
+::-webkit-scrollbar {
+  width: 5px;
+  opacity: 0.2;
+}
+::-webkit-scrollbar-track {
+  background: #fff; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #ccc; 
 }
