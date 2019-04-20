@@ -7,6 +7,9 @@
   border-radius: 10px 10px 0 0;
   border: none!important;
 }
+.sfpo-table tr:hover{
+  background: rgba(100, 100, 100, 0.1);
+}
 .sfpo-table thead th, .sfpo-table tbody th{
   background: #ddd!important;
   filter: brightness(1);
@@ -17,21 +20,24 @@
   border: none;
   padding: 10px 0;
 }
+.sfpo-table td{
+  border-left: 1px solid #ddd;
+  border-right: none;
+  border-top: none;
+  border-bottom: none;
+  padding: 1px;
+}
 .overflow-x-auto{
   overflow-x: auto;
-
-td:first-child, th:first-child {
- border-left: none;
 }
 ::-webkit-scrollbar {
   width: 5px;
   opacity: 0.2;
 }
 ::-webkit-scrollbar-track {
-  background: #fff; 
+  background: #eee; 
 }
- 
-/* Handle */
+
 ::-webkit-scrollbar-thumb {
   background: #ccc; 
 }
