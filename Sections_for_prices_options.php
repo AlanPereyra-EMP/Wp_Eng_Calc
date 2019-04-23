@@ -3,7 +3,7 @@
 * Plugin Name: Sections for prices options
 * Plugin URI: https://informatica.pereyra.online/
 * Description: WordPress plugin to create a shortcode to add sections for different prices options.
-* Version: 1.0.0 beta
+* Version: 1.0.1 beta
 * Author: Alan Pereyra
 * Author URI: https://informatica.pereyra.online/alanpereyra57
 **/
