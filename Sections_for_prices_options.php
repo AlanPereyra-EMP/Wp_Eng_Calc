@@ -27,21 +27,44 @@ if(!shortcode_exists('sfpo')) {
 
     	// atts
     	$atributes = shortcode_atts( array(
-	      '1st' => array(),
-	      '2nd' => array(),
-	      '3rd' => array(),
-	      'values' => array()
+	      '1st' => 'Eco',
+	      '2nd' => 'Normal',
+	      '3rd' => 'Premium',
+	      'values' => 'Basic options|true|true|true;Medium options|false|true|true;Special options|false|false|true'
 	    ), $atts );
 
     	// Values to array ( ";" define end of array element)
-	    $st = $atts['1st'];
-	    $st = explode(';', $st);
-	    $nd = $atts['2nd'];
-	    $nd = explode(';', $nd);
-	    $rd = $atts['3rd'];
-	    $rd = explode(';', $rd);
-	    $values = $atts['values'];
-	    $values = explode(';', $values);
+    	if($atributes['1st']!='Eco'){
+		    $st = $atts['1st'];
+		    $st = explode(';', $st);
+		}else{
+			$st[] = $atributes['1st'];
+		}
+		if($atributes['2nd']!='Normal'){
+		    $nd = $atts['2nd'];
+		    $nd = explode(';', $nd);
+		}else{
+			$nd[] = $atributes['2nd'];
+		}
+		if($atributes['3rd']!='Premium'){
+		    $rd = $atts['3rd'];
+		    $rd = explode(';', $rd);
+		}else{
+			$rd[] = $atributes['3rd'];
+		}
+		if($atributes['values']!='Basic options|true|true|true;Medium options|false|true|true;Special options|false|false|true'){
+		    $values = $atts['values'];
+		    $values = explode(';', $values);
+		}else{
+			$values = $atributes['values'];
+			$values = explode(';', $values);
+			$st[] = 'Show more';
+			$st[] = '#';
+			$nd[] = 'Show more';
+			$nd[] = '#';
+			$rd[] = 'Show more';
+			$rd[] = '#';
+		}
 
         // Head
     	$thead = '<th class="w-20"></th>
