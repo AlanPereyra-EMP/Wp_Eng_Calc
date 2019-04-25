@@ -17,6 +17,104 @@ function sfpo_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'sfpo_scripts');
 
+// Setting sfpo
+function sfpo_register_settings() {
+   add_option( 'sfpo_option_name', 'SFPO');
+   register_setting( 'sfpo_options_group', 'sfpo_option_name', 'sfpo_callback' );
+}
+add_action( 'admin_init', 'sfpo_register_settings' );
+
+// Sfpo option page
+function sfpo_register_options_page() {
+  add_options_page('Sections for prices options', 'Sections for prices options', 'manage_options', 'sfpo', 'sfpo_options_page');
+}
+add_action('admin_menu', 'sfpo_register_options_page'); 
+
+function sfpo_options_page(){
+	sfpo_scripts()
+	?>
+		<style type="text/css">
+			.sfpo-all-content{
+				margin-right: 10px;
+			}
+			.sfpo-table{
+			  width: 100%;
+			  position: relative;
+			  min-width: 0;
+			  border-collapse: collapse;
+			}
+			.sfpo-table tr:hover{
+				background: none!important;
+			}
+			.sfpo-table th{
+				padding: 0!important;
+			}
+			.sfpo-table input{
+			  width: 100%;
+			  position: relative;
+			  background: none;
+			  height: 50px;
+			  border: none!important;
+			  box-shadow: none!important;
+			  text-align: center;
+			}
+			.sfpo-table input:hover,.sfpo-table input:focus{
+				border: none!important;
+				box-shadow: none!important;
+			}
+			.sfpo-table th input{
+			  border: 1px solid #ccc;
+			}
+			.sfpo-admin-title{
+			  padding: 20px 0;
+			  text-align: center;
+			}
+			.sfpo-w-100{
+				width: 100%;
+			}
+			.sfpo-w-25{
+				width: 25%;
+			}
+			.sfpo-text-center{
+				text-align: center;
+			}
+			.sfpo-no-border td{
+				border: none!important;
+			}
+
+		</style>
+	  <div class="sfpo-all-content">
+	  <h1 class="sfpo-admin-title ">Section for prices options "SFPO"</h1>
+	  <form method="post" action="options.php">
+	  <?php settings_fields( 'myplugin_options_group' ); ?>
+	  <br>
+	  <table class="sfpo-table">
+	  	<thead>
+		  <tr>
+		    <th class="sfpo-w-25"></th>
+		    <th><input type="text" id="1st" placeholder="Eco" name="myplugin_option_name" value="<?php echo get_option('myplugin_option_name'); ?>" /></th	>
+		    <th><input type="text" id="2nd" placeholder="Normal" name="myplugin_option_name" value="<?php echo get_option('myplugin_option_name'); ?>" /></th>
+		    <th><input type="text" id="3rd" placeholder="Premium" value="<?php echo get_option('myplugin_option_name'); ?>" /></th>
+		  </tr>
+		</thead>
+		<tbody>
+		  <tr>
+		  	<th><input type="text" placeholder="Descripción" name=""></th>
+		  	<td><input type="text" placeholder="valor*" name=""></td>
+		  	<td><input type="text" placeholder="valor*" name=""></td>
+		  	<td><input type="text" placeholder="valor*" name=""></td>
+		  </tr>
+		</tbody>
+	  </table>
+	  <br>
+	  <p class="sfpo-text-center">*Las celdas <b>valor</b> se pueden rellenar con "si" para un ✔️ y "no" para un ❌. También pueden incluir texto texto</p>
+	  <br>
+	  <?php  submit_button('', 'sfpo-w-100 button button-primary'); ?>
+	  </form>
+	  </div>
+	<?php
+}
+
 
 // Shortcode "Section For Prices Options"
 

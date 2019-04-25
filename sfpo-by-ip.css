@@ -27,9 +27,6 @@
   border-top: none;
   padding: 1px;
 }
-.sfpo-table tbody th {
-    box-shadow: 0 14px 13px rgba(0,0,0,0.2);
-}
 tr.sfpo-links{
   background: none !important;
 }
@@ -77,4 +74,12 @@ tr.sfpo-links{
     font-size: 11px!important;
   }
 }
-
+/*Admin styles*/
+.sfpo-admin-content{
+  max-width: 100px;
+  position: relative;
+  min-width: 0;
+}
+.sfpo-admin-title{
+  padding: 20px;
+}
