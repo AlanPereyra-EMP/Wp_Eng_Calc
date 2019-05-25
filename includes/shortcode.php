@@ -6,7 +6,7 @@ if(!shortcode_exists('wec')) {
     	$atributes = shortcode_atts( array(
 	      'calc_name' => 'test'
 	    ), $atts );
-  
+        
 
         if ($atributes['calc_name'] === 'test'){
 

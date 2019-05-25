@@ -1,29 +1,23 @@
 #wec{
 	max-width: 100%;
 }
-
 #wec-form{
 	margin: 30px 0 0 0;
 }
-
 .wec-p{
 	text-align: center;
 }
-
 #wec-form label{
 	padding: 10px 0;
 	width: 100%;
 }
-
 .wec-input, .wec-input-result{
 	width: 100%;
 	margin: 10px 0;
 }
-
 .wec-input-result{
 	height: 50px;
 }
-
 #wec-submit{
 	margin: 30px 0 10px 0;
 	width: 100%;
