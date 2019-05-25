@@ -23,7 +23,6 @@ if(!shortcode_exists('wec')) {
                             <p class="wec-p"><small>Formula utilizada: a²+b²=c²</small></p>';
         }
 
-
         // always return
         return '<div id="wec">'.$calc_retun.'</div>';
     }
