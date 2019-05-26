@@ -3,7 +3,7 @@
 * Plugin Name: Wp Engineer Calc
 * Plugin URI: https://informatica.pereyra.online/
 * Description: WordPress plugin to create a engineer calcs.
-* Version: 1.0.0 beta
+* Version: 1.0.1 beta
 * Author: Alan Pereyra
 * Author URI: https://informatica.pereyra.online/alanpereyra57
 * License: GPLv3 or later
@@ -26,7 +26,7 @@ class WecClass
 	}
 
 	function activate() {
-		$this->custom_post_type();
+		// $this->custom_post_type();
 		flush_rewrite_rules();
 	}
 
