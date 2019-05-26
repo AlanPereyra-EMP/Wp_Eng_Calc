@@ -35,9 +35,9 @@ class WecClass
 	}
 
 
-	// function custom_post_type() {
-	// 	register_post_type( 'wec', ['public' => true, 'label' => 'Wec add'] );
-	// }
+	function custom_post_type() {
+		register_post_type( 'wec', ['public' => true, 'label' => 'Wec add'] );
+	}
 }
 
 if(class_exists('wecClass')){
