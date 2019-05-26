@@ -8,9 +8,9 @@ if(!shortcode_exists('wec')) {
 	    ), $atts );
 
 
-        if ($atributes['calc_name'] === 'test'){
+        $calc_js = plugin_dir_url( __FILE__ ) . 'wec.js'; 
 
-            $calc_js = plugin_dir_url( __FILE__ ) . 'wec.js';
+        if ($atributes['calc_name'] === 'test'){
 
             $calc_retun = '<script src="'.$calc_js.'"></script>
                             <p class="wec-p">Calculadora de hipotenusa <br>(ingresar ambos catetos)</p>
@@ -22,8 +22,6 @@ if(!shortcode_exists('wec')) {
                             </form>
                             <p class="wec-p"><small>Formula utilizada: a²+b²=c²</small></p>';
         } else if ($atributes['calc_name'] === 'slab'){
-
-            $calc_js = plugin_dir_url( __FILE__ ) . 'wec.js';
 
             $calc_retun = '<script src="'.$calc_js.'"></script>
                             <p class="wec-p">Calculadora de prueba <br>(primera parte)</p>
