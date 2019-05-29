@@ -11,7 +11,7 @@
 	padding: 10px 0;
 	width: 100%;
 }
-.wec-input, .wec-input-result{
+.wec-input, .wec-input-result, .wec-select{
 	width: 100%;
 	margin: 10px 0;
 }
