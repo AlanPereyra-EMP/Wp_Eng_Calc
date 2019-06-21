@@ -10,47 +10,48 @@ function calcTest(){
 // Calculation of slab
 function calcSlab(){
 
-	// Input
+	// Inputs
 	var luzMayor = document.calc.lMa.value;
 	var luzMenor = document.calc.lMe.value;
-
-	// Temp input
+	var parapeto = document.calc.parapeto.value;
 	var type = document.calc.type.value;
+	// todo add all inputs
 
 	var luzFinal = luzMayor/luzMenor;
 
-	if (lFinal < 2){
+	if (luzFinal > 2){
 		// Unidireccional
-
+		var type = 'Unidireccional';
 	} else {
 		// Bidireccional
+		var type = 'Bidireccional';
 	}
 
-	// Definir m
+	
+	// const cc = 2;
+	// const b = 1;
+
+    // var d = h - cc - (2);
+
+    // Definir m
 
 	// Analisis de carga
-	var Ø = luzMenor/m;
-
-	const cc = 2;
-	const b = 1;
-
-    var d = h - cc - (dbMayor/2);
-	
-
+	// var Ø = luzMenor/m;
     
     
-    const carpeta = [2100, 0.02];
-    const contrapiso = [1800, 0.08];
-    const losaHA = [2500, 0.12]; 
-    const cieloRa =[1900, 20]
-    var Mu = document.calc.Mu.value;
+    // const carpeta = [2100, 0.02];
+    // const contrapiso = [1800, 0.08];
+    // const losaHA = [2500, 0.12]; 
+    // const cieloRa =[1900, 20]
+    // var Mu = document.calc.Mu.value;
 
     // var espesor = lMe/m;
 
-    var Mn = Mu/Ø;
+    // var Mn = Mu/Ø;
 
 
     var result = type;
 
     document.calc.output.value = result;
+
 }

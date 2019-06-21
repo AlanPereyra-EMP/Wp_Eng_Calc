@@ -29,17 +29,22 @@ if(!shortcode_exists('wec')) {
             $calc_retun = '<script src="'.$calc_js.'"></script>
                             <p class="wec-p">Calculadora de prueba <br>(primera parte)</p>
                             <form id="wec-form" name="calc">
+                                <input class="wec-input" type="text" name="lMa" placeholder="Luz mayor (mtrs)">
+                                <input class="wec-input" type="text" name="lMe" placeholder="Luz menor (mtrs)">
                                 <select name="type" class="wec-select">
-                                  <option value="noValue">Selecionar opción</option>
+                                  <option value="noValue">Sobrecarga</option>
                                   <option value="asd">Volvo</option>
                                   <option value="type">Saab</option>
                                   <option value="type">Opel</option>
                                   <option value="type">Audi</option>
                                 </select>
-                                <input class="wec-input" type="text" name="lMa" placeholder="Luz mayor (mtrs)">
-                                <input class="wec-input" type="text" name="lMe" placeholder="Luz menor (mtrs)">
-                                <input class="wec-input" type="text" name="Mu" placeholder="Momento mayorado (Mu)">
-                                <input class="wec-input" type="text" name="Mu" placeholder="Momento mayorado (Mu)">
+                                <select name="parapeto" class="wec-select">
+                                  <option value="false">Parapeto (por defecto si)</option>
+                                  <option value="asd">Volvo</option>
+                                  <option value="type">Saab</option>
+                                  <option value="type">Opel</option>
+                                  <option value="type">Audi</option>
+                                </select>
                                 <input id="wec-submit" type="button" name="result" value="Resultado" onclick="calcSlab()">
                                 <input class="wec-input-result" type="text" name="output">
                             </form>
